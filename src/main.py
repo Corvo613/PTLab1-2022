@@ -5,6 +5,7 @@ import sys
 from CalcRating import CalcRating
 from TextDataReader import TextDataReader
 
+#mycomment
 
 def get_path_from_arguments(args) -> str:
     parser = argparse.ArgumentParser(description="Path to datafile")
