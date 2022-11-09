@@ -5,6 +5,7 @@ import sys
 from CalcRating import CalcRating
 from TextDataReader import TextDataReader
 from YAMLDataReader import YAMLDataReader
+from GoodStudent import GoodStudent
 
 #m123123
 
@@ -27,6 +28,8 @@ def main():
     rating = CalcRating(students).calc()
     print("Rating: ", rating)
 
+    student = GoodStudent(students).calc()
+    print("Good student:", student)
 
 if __name__ == "__main__":
     main()
