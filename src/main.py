@@ -7,7 +7,6 @@ from TextDataReader import TextDataReader
 from YAMLDataReader import YAMLDataReader
 from GoodStudent import GoodStudent
 
-#m123123
 
 def get_path_from_arguments(args) -> str:
     parser = argparse.ArgumentParser(description="Path to datafile")
@@ -20,8 +19,14 @@ def get_path_from_arguments(args) -> str:
 def main():
     path = get_path_from_arguments(sys.argv[1:])
 
-    #reader = TextDataReader()
-    reader = YAMLDataReader()
+    if path.split('.')[-1] == 'txt':
+        reader = TextDataReader()
+    elif path.split('.')[-1] == 'yml':
+        reader = YAMLDataReader()
+    else:
+        print("Данный формат файла не поддерживается или файл не существует")
+        return
+
     students = reader.read(path)
     print("Students: ", students)
 
@@ -30,6 +35,7 @@ def main():
 
     student = GoodStudent(students).calc()
     print("Good student:", student)
+
 
 if __name__ == "__main__":
     main()
