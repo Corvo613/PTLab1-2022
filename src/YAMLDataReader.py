@@ -2,6 +2,7 @@ from Types import DataType
 from DataReader import DataReader
 import yaml
 
+
 class YAMLDataReader(DataReader):
 
     def __init__(self) -> None:
